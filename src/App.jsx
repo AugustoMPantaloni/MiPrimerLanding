@@ -1,19 +1,23 @@
-import { useState } from 'react'
 import './App.css'
-import NavBar from "./Components/NavBar/NavBar"
-import Titulo from "./Components/Titulo/Titulo"
-import IconoCarrito from './Components/IconoCarrito/IconoCarrito'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NavBar from './Components/NavBar/NavBar'
+import NombreMarca from './Components/NombreMarca/NombreMarca'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
 
 function App() {
   return (
     <>
-      <Titulo/>
-      <IconoCarrito/>
-      <NavBar/>
-      <ItemListContainer mensaje="Proximamente..."/>
+      <BrowserRouter>
+          <NombreMarca/>
+          <NavBar/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path="/categoria/:categoriaId" element={<ItemListContainer/>}/>
+          <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
-
 export default App

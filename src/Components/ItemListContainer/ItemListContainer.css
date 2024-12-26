@@ -1,24 +1,76 @@
-.mensaje {
-    width: 100%; 
-    max-width: 900px; 
-    text-align: center; 
-    padding: 15px 30px;  
-    margin: 20px auto; 
-    color: #ffffff; 
-    font-size: 22px; 
-    font-weight: bold; 
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(0, 255, 255, 0.9); 
-    background: rgba(0, 188, 212, 0.85); 
-    border: 3px solid #00bcd4; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); 
-    backdrop-filter: blur(1px); 
-    font-family: 'Roboto', sans-serif; 
-    transition: all 0.3s ease;
-    height: auto; 
+.estilosMensajeCarga {
+    font-size: 2rem;              /* Aumentamos el tamaño de la fuente */
+    color: #FF7043;               /* Color naranja suave */
+    text-align: center;           /* Centrar el texto */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding: 30px;                /* Más espacio alrededor */
+    letter-spacing: 3px;          /* Mayor espaciado entre las letras */
+    animation: fadeIn 2s ease-in-out, grow 2s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sutil sombra para mejorar la legibilidad */
 }
 
-.mensaje:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.8); 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes grow {
+    0% {
+        font-size: 2rem;
+        color: #FF7043;
+    }
+    50% {
+        font-size: 2.3rem;            /* Efecto de "crecimiento" de la planta */
+        color: #FFAB91;               /* Naranja más suave */
+    }
+    100% {
+        font-size: 2rem;
+        color: #FF7043;
+    }
+}
+
+.estilosMensajeCarga::before {
+    content: '🌱';  /* Agrega un emoji de planta */
+    margin-right: 15px;
+    font-size: 2.5rem;          /* Tamaño más grande para el emoji */
+    animation: grow 2s ease-in-out infinite;
+}
+
+.estilosMensajeCarga::after {
+    content: '...';  /* Puntos suspensivos al final */
+    animation: dotPulse 2s infinite step-start;
+}
+
+@keyframes dotPulse {
+    0% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.estilosItemList{
+    display: flex;
+    justify-content: space-around; 
+    gap: 20px;  
+    flex-wrap: wrap;  
+    padding: 20px;  
+    margin-top: 30px;  
 }

@@ -1,10 +1,14 @@
 import "./NavBar.css"
+import CartWidget from "../CartWidget/IconoCarrito"
+import { Link } from "react-router-dom";
+
 const NavBar = ({ className }) => {
     return (
         <nav className={className}>
-            <a href="#">Inicio</a>
-            <a href="">Tienda</a>
-            <a href="">Mis Plantas</a>
+            <Link to="/">Todas las plantas</Link>
+            <Link to="/categoria/Zen">Zen</Link>
+            <Link to="/categoria/Exóticas">Exoticas</Link>
+            <CartWidget/>
         </nav>
     );
 } 

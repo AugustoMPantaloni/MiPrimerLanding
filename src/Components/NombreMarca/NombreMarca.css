@@ -1,0 +1,26 @@
+.estilosTituloInicio {
+    font-family: "Marhey", sans-serif; 
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.125rem; 
+    color: #F9A825; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(0, 255, 255, 1); 
+    letter-spacing: 3px; 
+    margin: 20px 0; 
+    text-align: center; 
+    transition: all 0.3s ease; 
+}
+
+.estilosTituloInicio:hover {
+    transform: scale(1.05); 
+}
+
+.estilosItemList{
+        display: flex;
+        justify-content: space-around; 
+        gap: 20px;  
+        flex-wrap: wrap;  
+        padding: 20px;  
+        margin-top: 30px;  
+}
